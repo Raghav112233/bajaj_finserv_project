@@ -156,16 +156,96 @@ Invoke-RestMethod -Uri "https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl"
 - **Thunder Client**: VS Code extension
 - **Insomnia**: API testing tool
 
+## Example Data Arrays to Try
+
+Here are various example data arrays you can test with the API:
+
+### Basic Examples
+```json
+{"data": ["a", "1", "334", "4", "R", "$"]}
+{"data": ["2", "a", "y", "4", "&", "-", "*", "5", "92", "b"]}
+{"data": ["A", "ABcD", "DOE"]}
+```
+
+### Numbers Only
+```json
+{"data": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
+{"data": ["100", "200", "300", "400", "500"]}
+{"data": ["0", "1", "2", "3", "4", "5"]}
+```
+
+### Alphabets Only
+```json
+{"data": ["a", "b", "c", "d", "e"]}
+{"data": ["HELLO", "WORLD", "API", "TEST"]}
+{"data": ["x", "Y", "z", "A", "B", "C"]}
+```
+
+### Special Characters Only
+```json
+{"data": ["!", "@", "#", "$", "%", "^", "&", "*"]}
+{"data": ["+", "-", "=", "/", "\\", "|", "?", ">", "<"]}
+{"data": ["(", ")", "[", "]", "{", "}", "~", "`"]}
+```
+
+### Mixed Data Types
+```json
+{"data": ["hello", "123", "!", "WORLD", "456", "@", "test", "789"]}
+{"data": ["A1", "B2", "C3", "D4", "E5", "F6"]}
+{"data": ["apple", "42", "banana", "7", "cherry", "99", "!", "@"]}
+```
+
+### Edge Cases
+```json
+{"data": []}
+{"data": ["0"]}
+{"data": ["a"]}
+{"data": ["!"]}
+{"data": ["", " ", "  ", "   "]}
+```
+
+### Complex Examples
+```json
+{"data": ["JavaScript", "Python", "Java", "C++", "Go", "Rust", "123", "456", "789", "!", "@", "#"]}
+{"data": ["API", "REST", "JSON", "HTTP", "200", "404", "500", "GET", "POST", "PUT", "DELETE"]}
+{"data": ["Node.js", "Express", "MongoDB", "React", "Vue", "Angular", "100", "200", "300", "&", "*", "+"]}
+```
+
+### Real-World Scenarios
+```json
+{"data": ["user123", "email@test.com", "password123", "admin", "2024", "01", "15"]}
+{"data": ["product", "SKU123", "price", "29.99", "inventory", "100", "category", "electronics"]}
+{"data": ["order", "ID456", "customer", "John", "Doe", "total", "150.50", "status", "pending"]}
+```
+
+### Testing Commands for Examples
+
+**PowerShell:**
+```powershell
+# Test with mixed data
+$body = @{data = @("hello", "123", "!", "WORLD", "456", "@", "test", "789")} | ConvertTo-Json
+Invoke-RestMethod -Uri "https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl" -Method Post -Body $body -ContentType "application/json"
+
+# Test with numbers only
+$body = @{data = @("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")} | ConvertTo-Json
+Invoke-RestMethod -Uri "https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl" -Method Post -Body $body -ContentType "application/json"
+```
+
+**cURL:**
+```bash
+# Test with alphabets only
+curl -X POST -H "Content-Type: application/json" -d "{\"data\": [\"a\", \"b\", \"c\", \"d\", \"e\"]}" https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl
+
+# Test with special characters
+curl -X POST -H "Content-Type: application/json" -d "{\"data\": [\"!\", \"@\", \"#\", \"$\", \"%\", \"^\", \"&\", \"*\"]}" https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl
+```
+
 ## Error Handling
 
 - **400**: Invalid input (missing or non-array data)
 - **500**: Internal server errors
 - **200**: Successful processing
 
-## License
-
-MIT License - feel free to use and modify as needed.
-
 ## Author
 
-John Doe - BFHL Assignment Submission
+Raghav Babbar - BFHL Assignment Submission
