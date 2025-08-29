@@ -53,15 +53,18 @@ vercel
 
 ## Testing Your Deployed API
 
-### Test with cURL
+### Test with cURL (Command Prompt)
 ```bash
-curl -X POST \
-  https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl \
-  -H "Content-Type: application/json" \
-  -d '{"data": ["a", "1", "334", "4", "R", "$"]}'
+curl -X POST -H "Content-Type: application/json" -d "{\"data\": [\"a\", \"1\", \"334\", \"4\", \"R\", \"$\"]}" https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl
 ```
 
-### Test with Postman
+### Test with PowerShell
+```powershell
+$body = @{data = @("a", "1", "334", "4", "R", "$")} | ConvertTo-Json
+Invoke-RestMethod -Uri "https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl" -Method Post -Body $body -ContentType "application/json"
+```
+
+### Test with Postman/Thunder Client
 1. Create new POST request
 2. URL: `https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl`
 3. Headers: `Content-Type: application/json`
@@ -86,11 +89,19 @@ curl -X POST \
 1. **Build Error**: Check if all dependencies are in `package.json`
 2. **Route Not Found**: Ensure `vercel.json` is properly configured
 3. **Function Timeout**: API should respond quickly, no timeout issues expected
+4. **Authentication Required**: If you see authentication errors, disable deployment protection in Vercel dashboard
 
 ### Check Logs
 - Go to your Vercel dashboard
 - Click on your project
 - Check "Functions" tab for any errors
+
+### Disable Deployment Protection
+If your API shows authentication errors:
+1. Go to Vercel Dashboard → Your Project → Settings → General
+2. Scroll to "Deployment Protection" section
+3. Change from "Password Protection" to "No Protection"
+4. Save changes
 
 ## Your API Endpoint
 Once deployed, your API endpoint will be:

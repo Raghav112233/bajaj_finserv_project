@@ -134,11 +134,25 @@ bfhl-api/
 ### Live API Endpoint
 Your API is now live at: `https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl`
 
+**Note**: Make sure deployment protection is disabled in Vercel dashboard for public access.
+
 ## Testing
 
-Test the API using tools like:
+### Command Line Testing
+
+**cURL (Command Prompt):**
+```bash
+curl -X POST -H "Content-Type: application/json" -d "{\"data\": [\"a\", \"1\", \"334\", \"4\", \"R\", \"$\"]}" https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl
+```
+
+**PowerShell:**
+```powershell
+$body = @{data = @("a", "1", "334", "4", "R", "$")} | ConvertTo-Json
+Invoke-RestMethod -Uri "https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl" -Method Post -Body $body -ContentType "application/json"
+```
+
+### GUI Testing Tools
 - **Postman**: Import the collection
-- **cURL**: Command line testing
 - **Thunder Client**: VS Code extension
 - **Insomnia**: API testing tool
 

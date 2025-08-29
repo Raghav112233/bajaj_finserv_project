@@ -76,12 +76,15 @@ Use these examples to test your deployed API endpoint.
 
 ## Testing Commands
 
-### cURL
+### cURL (Command Prompt)
 ```bash
-curl -X POST \
-  https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl \
-  -H "Content-Type: application/json" \
-  -d '{"data": ["a", "1", "334", "4", "R", "$"]}'
+curl -X POST -H "Content-Type: application/json" -d "{\"data\": [\"a\", \"1\", \"334\", \"4\", \"R\", \"$\"]}" https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl
+```
+
+### PowerShell
+```powershell
+$body = @{data = @("a", "1", "334", "4", "R", "$")} | ConvertTo-Json
+Invoke-RestMethod -Uri "https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl" -Method Post -Body $body -ContentType "application/json"
 ```
 
 ### Postman/Thunder Client
