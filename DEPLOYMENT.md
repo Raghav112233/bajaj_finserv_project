@@ -30,7 +30,7 @@ This guide will help you deploy your BFHL API to Vercel.
 6. Wait for deployment to complete
 
 ### Step 3: Get Your API Endpoint
-- Your API will be available at: `https://YOUR_PROJECT_NAME.vercel.app/bfhl`
+- Your API will be available at: `https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl`
 - The `/bfhl` route is already configured in `vercel.json`
 
 ## Method 2: Deploy via Vercel CLI
@@ -56,14 +56,14 @@ vercel
 ### Test with cURL
 ```bash
 curl -X POST \
-  https://YOUR_PROJECT_NAME.vercel.app/bfhl \
+  https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl \
   -H "Content-Type: application/json" \
   -d '{"data": ["a", "1", "334", "4", "R", "$"]}'
 ```
 
 ### Test with Postman
 1. Create new POST request
-2. URL: `https://YOUR_PROJECT_NAME.vercel.app/bfhl`
+2. URL: `https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl`
 3. Headers: `Content-Type: application/json`
 4. Body (raw JSON):
    ```json
@@ -95,7 +95,7 @@ curl -X POST \
 ## Your API Endpoint
 Once deployed, your API endpoint will be:
 ```
-POST https://YOUR_PROJECT_NAME.vercel.app/bfhl
+POST https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl
 ```
 
 ## Submission

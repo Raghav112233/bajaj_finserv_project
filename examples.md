@@ -79,14 +79,14 @@ Use these examples to test your deployed API endpoint.
 ### cURL
 ```bash
 curl -X POST \
-  https://YOUR_DEPLOYED_URL.vercel.app/bfhl \
+  https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl \
   -H "Content-Type: application/json" \
   -d '{"data": ["a", "1", "334", "4", "R", "$"]}'
 ```
 
 ### Postman/Thunder Client
 - **Method**: POST
-- **URL**: `https://YOUR_DEPLOYED_URL.vercel.app/bfhl`
+- **URL**: `https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl`
 - **Headers**: `Content-Type: application/json`
 - **Body**: Raw JSON with the data arrays above
 

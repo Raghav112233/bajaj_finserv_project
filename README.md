@@ -131,6 +131,9 @@ bfhl-api/
 2. Connect repository to Vercel dashboard
 3. Deploy automatically on push
 
+### Live API Endpoint
+Your API is now live at: `https://bajaj-finserv-project-ihl9rkqm2.vercel.app/bfhl`
+
 ## Testing
 
 Test the API using tools like:
